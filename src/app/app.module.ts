@@ -5,16 +5,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HomepageComponent } from  './homepage/homepage.component';
 import { AppComponent } from './app.component';
 
+import { AppRoutingModule } from './app-routing.module';
+import{ DocumentsComponent } from './documents/documents.component';
 
 
 @NgModule({
   
 imports: [ 
-	BrowserModule
+	BrowserModule,
+	AppRoutingModule,
+	
   ],
 declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    DocumentsComponent
+
   ],
 
   providers: [],
