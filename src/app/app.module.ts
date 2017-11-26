@@ -7,6 +7,13 @@ import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import{ DocumentsComponent } from './documents/documents.component';
+import { AccountComponent } from './account/account.component';
+
+import { RecipesComponent } from './recipes/recipes.component';
+import { RecipeListComponent } from './recipes/recipe-list.component';
+import { RecipeNewComponent } from './recipes/recipe-new.component';
+
+import { KitchenComponent } from './kitchen/kitchen.component';
 
 
 @NgModule({
@@ -15,11 +22,18 @@ imports: [
 	BrowserModule,
 	AppRoutingModule,
 	
+	
   ],
 declarations: [
     AppComponent,
     HomepageComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    AccountComponent,
+    RecipesComponent,
+    KitchenComponent,
+    RecipeListComponent,
+    RecipeNewComponent
+
 
   ],
 
