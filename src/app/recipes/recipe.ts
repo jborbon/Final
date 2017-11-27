@@ -5,8 +5,8 @@ export class Recipe {
 		public prep_time?: number,
 		public cook_time?: number,
 		public total_time?: number,
-		public ingredients: string, 
-		public steps: string
+		public ingredients?: string, 
+		public steps?: string
 	) {}
 }
 

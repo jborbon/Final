@@ -1,1 +1,95 @@
 <h1>New Recipe</h1>
+
+<div>
+	<form #recipeForm="ngForm">
+		<div class="form-group">
+			<label for="recipe_name">Recipe Name</label>
+			<input type="text"
+					id="recipe_name"
+					placeholder="Rice and Beans"
+					required
+					name="recipe_name" 
+					#recipe_name='ngModel'
+					[(ngModel)]="recipe.recipe_name"
+			>
+		</div>
+
+		<div [hidden]="recipe_name.valid || recipe_name.pristine">
+			Recipe name must be entered  
+		</div>
+		<div class="form-group">
+			<label for="prep_time">Prep Time</label>
+			<input type="number"
+					id="prep_time"
+					placeholder="In minute "
+					
+					name="prep_time" 
+					#prep_time='ngModel'
+					[(ngModel)]="recipe.prep_time"
+			>
+		</div>
+		<div class="form-group">
+			<label for="cook_time">Cook Time</label>
+			<input type="number"
+					id="cook_time"
+					placeholder="in mintues"
+					
+					name="cook_time" 
+					#cook_time='ngModel'
+					[(ngModel)]="recipe.cook_time"
+			>
+		</div>
+		<div class="form-group">
+			<label for="recipe_ingredients">Ingredients</label>
+			<input type="textbox"
+					id="recipe_ingredients"
+					placeholder=""
+					required
+					name="recipe_ingredients" 
+					#recipe_ingredients='ngModel'
+					[(ngModel)]="recipe.recipe_ingredients"
+			>
+		</div>
+		<div [hidden]="recipe_ingredients.valid || recipe_ingredients.pristine">
+			ingredients must be entered  
+		</div>
+		<div class="form-group">
+			<label for="recipe_steps">Steps</label>
+			<input type="textbox"
+					id="recipe_steps"
+					placeholder="detailed steps "
+					
+					name="recipe_steps" 
+					#recipe_steps='ngModel'
+					[(ngModel)]="recipe.recipe_steps"
+			>
+		</div>
+	</form>
+</div>
+
+<div>
+	 
+        <h1>{{recipe.recipe_name}}</h1>
+        
+        
+
+        <strong>Prep Time:{{recipe.prep_time}} Minutes <br>
+        		Cook Time:{{recipe.cook_time}} Minutes <br>
+        		Total Time:{{recipe.prep_time+recipe.cook_time}} Minutes</strong>
+        <h2>Ingredients</h2>
+        <ol>
+            <li>{{recipe.recipe_ingredients}}</li>
+        </ol>
+       
+        
+        <table>
+            <thead>
+                
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        
+        <p><strong>Steps:<br><br>     </strong>{{recipe.recipe_steps}}
+</p>
+</div>
