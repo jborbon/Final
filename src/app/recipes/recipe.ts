@@ -1,7 +1,7 @@
 export class Recipe {
 	constructor(
 		public id?: number,
-		public recipe_name: string,
+		public recipe_name?: string,
 		public prep_time?: number,
 		public cook_time?: number,
 		public total_time?: number,

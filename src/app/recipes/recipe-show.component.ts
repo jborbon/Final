@@ -8,8 +8,7 @@ import { Recipe } from './recipe';
 	templateUrl: "recipe-show.component.html"
 
 })
-
-export class RecipeShowComponent implements Oninit {
+export class RecipeShowComponent implements OnInit {
 	id: number;
 	routeId: any;
 
