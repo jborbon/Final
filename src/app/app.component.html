@@ -1,12 +1,31 @@
-<h1>Navigation</h1>
 
-<a routerLink='/home'>Home</a>
-<a routerLink='/documents'>Documents</a>
-<a routerLink='/recipes'>Recipes</a>
-<a routerLink='/recipes/new'>New Recipes</a>
-<a routerLink='/kitchen'>Your Kitchen</a>
-<a routerLink='/account'>Account</a>
+<nav class="navbar navbar-fixed-top navbar-light bg-faded">
+	<div class="container">
+		<ul class="nav navbar-nav">
+			<li class="nav-item">
+					<a class="nav-link" routerLink='/home' routerLinkActive="active">Home</a>
+					<a class="nav-link" routerLink='/documents' routerLinkActive="active">Documents</a>
+			
+			<span class="nav-item dropdown">
+					<div ngbDropdown class="d-inline-block dropdown-links">
+						<button class="btn btn-outline-primary" id="recipeDropdown" ngbDropdownToggle>
+							Recipes
+						</button>
+					<div class="dropdown-menu" aria-labelledby=recipeDropdown>
+						<a class=dropdown-item routerLink='/recipes' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Recipes</a>
+						<a class=dropdown-item routerLink='/recipes/new' routerLinkActive="active">New Recipe</a>
+					</div>
+				</div>
+			</span>
+			
+				<a class="nav-link" routerLink='/kitchen' routerLinkActive="active">Your kitchen</a>
+				<a class="nav-link" routerLink='/account' routerLinkActive="active">Account</a>
+			</li>
+			
+		</ul>
+	</div>
+</nav>
 
-
-  <router-outlet></router-outlet>
-  
+<div class="app-body">
+<router-outlet></router-outlet>
+ </div>
