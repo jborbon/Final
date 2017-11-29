@@ -4,7 +4,8 @@ import { Recipe } from './recipe';
 @Component({
 	moduleId: module.id,
 	selector: 'recipe-new',
-	templateUrl: 'recipe-new.component.html'
+	templateUrl: 'recipe-new.component.html',
+	styleUrls: ['recipe-new.compenent.css']
 
 })
 

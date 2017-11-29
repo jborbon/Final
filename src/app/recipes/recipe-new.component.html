@@ -1,12 +1,17 @@
 <h1>New Recipe</h1>
 
-<div>
+
+<div class="card container form-container">
+
+	<div class="row">
+		<div class="col-md-6">
+			<div>
 	<form #recipeForm="ngForm">
 		<div class="form-group">
-			<label for="recipe_name">Recipe Name</label>
+			<label for="recipe_name"></label>
 			<input type="text"
 					id="recipe_name"
-					placeholder="Rice and Beans"
+					placeholder="Recipe Name"
 					required
 					name="recipe_name" 
 					#recipe_name='ngModel'
@@ -14,14 +19,16 @@
 			>
 		</div>
 
-		<div [hidden]="recipe_name.valid || recipe_name.pristine">
+		<div [hidden]="recipe_name.valid || recipe_name.pristine"
+			class="alert alert-danger" 
+		>
 			Recipe name must be entered  
 		</div>
 		<div class="form-group">
-			<label for="prep_time">Prep Time</label>
+			<label for="prep_time"></label>
 			<input type="number"
 					id="prep_time"
-					placeholder="In minute "
+					placeholder="Prep Time "
 					
 					name="prep_time" 
 					#prep_time='ngModel'
@@ -29,10 +36,10 @@
 			>
 		</div>
 		<div class="form-group">
-			<label for="cook_time">Cook Time</label>
+			<label for="cook_time"></label>
 			<input type="number"
 					id="cook_time"
-					placeholder="in mintues"
+					placeholder="Cook Time"
 					
 					name="cook_time" 
 					#cook_time='ngModel'
@@ -40,34 +47,41 @@
 			>
 		</div>
 		<div class="form-group">
-			<label for="recipe_ingredients">Ingredients</label>
-			<input type="textbox"
+			<label for="recipe_ingredients"></label>
+			<input type="text"
 					id="recipe_ingredients"
-					placeholder=""
+					placeholder="Ingredients"
+					class="md-textarea"
 					required
 					name="recipe_ingredients" 
 					#recipe_ingredients='ngModel'
 					[(ngModel)]="recipe.recipe_ingredients"
 			>
 		</div>
-		<div [hidden]="recipe_ingredients.valid || recipe_ingredients.pristine">
+		<div [hidden]="recipe_ingredients.valid || recipe_ingredients.pristine"
+			class="alert alert-danger"
+		>
 			ingredients must be entered  
 		</div>
 		<div class="form-group">
-			<label for="recipe_steps">Steps</label>
-			<input type="textbox"
+			<label for="recipe_steps"></label>
+			<input type="text"
 					id="recipe_steps"
-					placeholder="detailed steps "
-					
+					placeholder="Steps "
+					class="md-textarea"
 					name="recipe_steps" 
+					mdbActive
 					#recipe_steps='ngModel'
 					[(ngModel)]="recipe.recipe_steps"
 			>
+
 		</div>
 	</form>
 </div>
-
-<div>
+			
+		</div>
+		<div class="col-md-6">
+			<div>
 	 
         <h1>{{recipe.recipe_name}}</h1>
         
@@ -93,3 +107,11 @@
         <p><strong>Steps:<br><br>     </strong>{{recipe.recipe_steps}}
 </p>
 </div>
+</div>
+
+		</div>
+		
+	</div>
+	
+	
+
