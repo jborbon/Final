@@ -1,7 +1,42 @@
 <h1> recipe list </h1>
 
 <div *ngFor="let recipe of recipes">
-	<a routerLink="/recipe/{{recipe.id}}">{{recipe.id}} - {{recipe.recipe_name}}</a>
+	
 	
 
+
+
+
+<div class="col-md-2">
+
+    <!--Card-->
+    <div class="card card-cascade narrower">
+
+        <!--Card image-->
+        <div class="view overlay hm-white-slight waves-light" mdbRippleRadius>
+            <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="img-fluid" alt="">
+            <a>
+                <div class="mask"></div>
+            </a>
+        </div>
+        <!--/.Card image-->
+
+        <!--Card content-->
+        <div class="card-body">
+           
+            <!--Title-->
+            <h4 class="card-title">{{recipe.recipe_name}}</h4>
+            <!--Text-->
+            <p class="card-text"></p>
+            <a class="btn btn-unique waves-light" routerLink="/recipe/{{recipe.id}}" mdbRippleRadius>Lets get cooking</a>
+        </div>
+        <!--/.Card content-->
+
+    </div>
+    <!--/.Card-->
+
 </div>
+<br>
+</div>
+
+
