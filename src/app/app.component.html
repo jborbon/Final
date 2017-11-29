@@ -1,31 +1,60 @@
 
-<nav class="navbar navbar-fixed-top navbar-light bg-faded">
-	<div class="container">
-		<ul class="nav navbar-nav">
-			<li class="nav-item">
-					<a class="nav-link" routerLink='/home' routerLinkActive="active">Home</a>
-					<a class="nav-link" routerLink='/documents' routerLinkActive="active">Documents</a>
-			
-			<span class="nav-item dropdown">
-					<div ngbDropdown class="d-inline-block dropdown-links">
-						<button class="btn btn-outline-primary" id="recipeDropdown" ngbDropdownToggle>
-							Recipes
-						</button>
-					<div class="dropdown-menu" aria-labelledby=recipeDropdown>
-						<a class=dropdown-item routerLink='/recipes' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Recipes</a>
-						<a class=dropdown-item routerLink='/recipes/new' routerLinkActive="active">New Recipe</a>
-					</div>
-				</div>
-			</span>
-			
-				<a class="nav-link" routerLink='/kitchen' routerLinkActive="active">Your kitchen</a>
-				<a class="nav-link" routerLink='/account' routerLinkActive="active">Account</a>
-			</li>
-			
-		</ul>
-	</div>
-</nav>
 
+
+
+
+
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+           
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">
+            <img src="https://png.pngtree.com/element_origin_min_pic/17/08/22/9977288962d721e2a156674bd3f381d1.jpg" height="40" alt="">
+        </a>
+
+    <!-- Collapsible content -->
+    <links>
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link waves-light" routerLink='/home' mdbRippleRadius>Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" routerLink='/documents' mdbRippleRadius>Docs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" routerLink='/kitchen' mdbRippleRadius>Kitchen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" routerLink='/account' mdbRippleRadius>Account</a>
+            </li>
+
+
+            <!-- Dropdown -->
+             <li class="nav-item dropdown " dropdown>
+                <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle indigo" mdbRippleRadius>
+                Recipes<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" mdbRippleRadius routerLink='/recipes' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Recipes</a>
+                    <a class="dropdown-item waves-light" mdbRippleRadius routerLink='/recipes/new' routerLinkActive="active">New Recipe</a>
+                </div>
+            </li>
+
+        </ul>
+        <!-- Links -->
+
+        <!-- Search form -->
+        <form class="form-inline  waves-light" mdbRippleRadius>
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        </form>
+    </links>
+    <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
 <div class="app-body">
 <router-outlet></router-outlet>
  </div>
+
+
