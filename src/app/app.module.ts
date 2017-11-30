@@ -4,6 +4,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 
 
 import { HomepageComponent } from  './homepage/homepage.component';
@@ -11,12 +13,15 @@ import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { DocumentsComponent } from './documents/documents.component';
+import { DocumentService } from './documents/documents.service';
+
 import { AccountComponent } from './account/account.component';
 
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeListComponent } from './recipes/recipe-list.component';
 import { RecipeNewComponent } from './recipes/recipe-new.component';
 import { RecipeShowComponent } from './recipes/recipe-show.component';
+import { RecipeService } from './recipes/recipes.service';
 
 import { KitchenComponent } from './kitchen/kitchen.component';
 
@@ -28,7 +33,8 @@ imports: [
 	BrowserModule,
 	AppRoutingModule,
   FormsModule,
-  MDBBootstrapModule.forRoot()
+  MDBBootstrapModule.forRoot(),
+  HttpModule
    ],
 declarations: [
     AppComponent,
@@ -44,7 +50,10 @@ declarations: [
 
   ],
 
-  providers: [],
+  providers: [
+    DocumentService,
+    RecipeService
+  ],
 
   bootstrap: [
 AppComponent

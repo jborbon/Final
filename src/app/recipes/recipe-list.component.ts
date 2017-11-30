@@ -1,24 +1,36 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Recipe } from './recipe';
+import { RecipeService } from './recipes.service';
+import { Observable } from 'rxjs/Rx';
 
 
 @Component({
 	moduleId: module.id,
 	selector: "recipe-list",
-	templateUrl: "recipe-list.component.html"
+	templateUrl: "recipe-list.component.html",
+	providers: [ RecipeService ]
+
 })
 
+export class RecipeListComponent implements OnInit {
+	recipes: Recipe[];
+	errorMessage: string;
+	mode = "Observable";
 
-export class RecipeListComponent {
-	recipeOne: Recipe = new Recipe(1,"Chicken parm", 20, 30, 50, "bread chicken parm sauce","cook chicken, cook sauce , put chicken and sauce together ")
-	recipeTwo: Recipe = new Recipe(2,"Chicken ", 10, 10, 20, "bread chicken parm sauce","cook chicken, cook sauce , put chicken and sauce together ")
-	recipeThree: Recipe = new Recipe(3,"Parm", 5, 10, 15, "bread chicken parm sauce","cook chicken, cook sauce , put chicken and sauce together ")
+	constructor (
+		private recipeService: RecipeService
+		){}
 
-
-recipes: Recipe[] = [
-this.recipeOne,
-this.recipeTwo,
-this.recipeThree
-]
-}
+	ngOnInit(){
+		let timer = Observable.timer(0,)
+		timer.subscribe(() => this.getRecipes());
+	}
+	getRecipes(){
+		this.recipeService.getRecipes()
+			.subscribe(
+				recipes => this.recipes = recipes,
+				error => this.errorMessage = <any>error
+				);
+		}
+	}
 

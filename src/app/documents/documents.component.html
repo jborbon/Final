@@ -1,10 +1,13 @@
 
-<div class="container">
+<div class="container"   >
 	
 	<h1 class="headline">{{ pageTitle }}</h1>
 	
-	<div class="animated  fadeInUp" *ngFor="let doc of documents">
-		<img class="card-img-top" src="{{doc.image_url}}" alt="Card image cap" width="100">
+	<div class="card animated  fadeInUp" *ngFor="let doc of documents">
+		
+		
+		<img class="card-img-top" src="{{doc.image_url}}" alt="Card image cap" width="100%" height="300px">
+		
 			<div class="card-block">
 		    	<h4 class="card-title">{{doc.title}}</h4>
 				
@@ -13,7 +16,7 @@
 				<div>
 					<a class="btn btn-small btn-primary " href="{{doc.file_url}}">Download file</a>
 				</div>
-				<p class="card-text"><small class="text-muted">{{doc.updated_at}}</small></p>
+				<p class="card-text"><small class="text-muted">Created at:{{doc.updated_at | date}}</small></p>
 			</div>
 	</div>
 	
