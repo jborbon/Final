@@ -1,0 +1,20 @@
+
+html,
+body,
+header,
+#intro {
+	height: 896px;
+	width: 100%;
+	
+	
+}
+
+
+
+#intro{
+	background: url("https://images.unsplash.com/photo-1465060780892-48505fc8f941?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D")no-repeat center center fixed;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}

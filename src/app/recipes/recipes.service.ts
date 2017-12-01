@@ -19,6 +19,13 @@ private recipesUrl = 'http://localhost:3001/recipes.json';
 						.map((response: Response)=> <Recipe[]>response.json())
 						.catch(this.handleError);
 	}
+
+	getRecipe(id:number){
+		
+	}
+
+
+
 	//  error handling code for API
 	private handleError (error: Response | any) {
     

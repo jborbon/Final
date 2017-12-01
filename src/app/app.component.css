@@ -1,16 +1,19 @@
 
 
 .app-body{
-	padding-top: 40px;
+	
 	background-color:darkgray;
 }
-/*
-.headline h1{
 
-	color:white;
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
 }
 
-.container ul li a {
-	display: inline-block;
-	margin: 0px;
-}*/
+.rows{
+	margin-top:15px;
+}
